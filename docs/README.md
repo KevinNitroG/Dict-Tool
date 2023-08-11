@@ -6,7 +6,7 @@
     </a>
 </p>
 
-<pre style="text-align: center;">
+<pre align="center">
 ██████╗ ██╗ ██████╗████████╗    ████████╗ ██████╗  ██████╗ ██╗     ███████╗
 ██╔══██╗██║██╔════╝╚══██╔══╝    ╚══██╔══╝██╔═══██╗██╔═══██╗██║     ██╔════╝
 ██║  ██║██║██║        ██║          ██║   ██║   ██║██║   ██║██║     ███████╗
@@ -15,7 +15,7 @@
 ╚═════╝ ╚═╝ ╚═════╝   ╚═╝          ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝
 </pre>
 
-<h3 style="text-align: center;">Python script giúp quản lý, chuyển đổi từ điển <i>(bảng gõ tắt)</i> giữa các bộ gõ</h3>
+<h3 align="center">Python script giúp quản lý, chuyển đổi từ điển <i>(bảng gõ tắt)</i> giữa các bộ gõ</h3>
 
 ---
 
