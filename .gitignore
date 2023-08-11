@@ -1,0 +1,11 @@
+# all .txt files
+**/*.txt
+
+# Gboard zip dictionary
+**/PersonalDictionary*.zip
+
+# own file
+test.py
+/old code
+**/__pycache__
+userOptions.py
