@@ -1,23 +1,21 @@
-<div style="text-align: center;">
-    <pre>
-        <code>
-            ██████╗ ██╗ ██████╗████████╗    ████████╗ ██████╗  ██████╗ ██╗     ███████╗
-            ██╔══██╗██║██╔════╝╚══██╔══╝    ╚══██╔══╝██╔═══██╗██╔═══██╗██║     ██╔════╝
-            ██║  ██║██║██║        ██║          ██║   ██║   ██║██║   ██║██║     ███████╗
-            ██║  ██║██║██║        ██║          ██║   ██║   ██║██║   ██║██║     ╚════██║
-            ██████╔╝██║╚██████╗   ██║          ██║   ╚██████╔╝╚██████╔╝███████╗███████║
-            ╚═════╝ ╚═╝ ╚═════╝   ╚═╝          ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝
-        </code>
-    </pre>
-</div>
+<p align="center">
+    <img src="https://img.shields.io/github/repo-size/KevinNitroG/Dict-Tool?style=for-the-badge" alt="Repo Size"/>
+    <img src="https://img.shields.io/github/stars/KevinNitroG/Dict-Tool?style=for-the-badge" alt="Repo Star"/>
+    <a href="https://github.com/KevinNitroG/Dict-Tool/archive/refs/heads/main.zip">
+        <img src="https://img.shields.io/badge/dict_convert-download-yellow?style=for-the-badge" alt="cosmetic"/>
+    </a>
+</p>
 
-<!-- # DICT TOOL ✨  -->
+<pre style="text-align: center;">
+        ██████╗ ██╗ ██████╗████████╗    ████████╗ ██████╗  ██████╗ ██╗     ███████╗
+        ██╔══██╗██║██╔════╝╚══██╔══╝    ╚══██╔══╝██╔═══██╗██╔═══██╗██║     ██╔════╝
+        ██║  ██║██║██║        ██║          ██║   ██║   ██║██║   ██║██║     ███████╗
+        ██║  ██║██║██║        ██║          ██║   ██║   ██║██║   ██║██║     ╚════██║
+        ██████╔╝██║╚██████╗   ██║          ██║   ╚██████╔╝╚██████╔╝███████╗███████║
+        ╚═════╝ ╚═╝ ╚═════╝   ╚═╝          ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝
+</pre>
 
-<div style="text-align: center;">
-
-![GitHub repo size](https://img.shields.io/github/repo-size/KevinNitroG/Dict-Tool?style=for-the-badge) ![GitHub Repo stars](https://img.shields.io/github/stars/KevinNitroG/Dict-Tool?style=for-the-badge) [![Download Dict Convert](https://img.shields.io/badge/dict_convert-download-yellow?style=for-the-badge)](https://github.com/KevinNitroG/Dict-Tool/archive/refs/heads/main.zip)
-
-<h3>Python script giúp quản lý, chuyển đổi từ điển <i>(bảng gõ tắt)</i> giữa các bộ gõ</h3>
+<h3 style="text-align: center;">Python script giúp quản lý, chuyển đổi từ điển <i>(bảng gõ tắt)</i> giữa các bộ gõ</h3>
 </div>
 
 ---
@@ -45,12 +43,13 @@
 
 ### CƠ BẢN 🐣
 
--   Cài đặt [Python](https://www.python.org/downloads/)
--   [Tải repo](https://github.com/KevinNitroG/Dict-Tool/archive/refs/heads/main.zip), giải nén
--   Chuẩn bị dictionary:
-    -   **Cách 1:** Paste file dictionary vào folder repo _(Đuôi `.txt`)_
+1.  Cài đặt [Python](https://www.python.org/downloads/)
+2.  [Tải repo](https://github.com/KevinNitroG/Dict-Tool/archive/refs/heads/main.zip), giải nén
+3.  Chuẩn bị dictionary:
+    -   **Cách 1:** Paste file dictionary vào folder [Dictionary In](../Dictionary%20In/)
     -   **Cách 2:** Copy paste nội dung vào biến `your_dictionary` file [userConstant.py](../userConstants.py)
--   Chạy file [main.py](../main.py)
+4.  Chạy file [main.py](../main.py)
+5.  Được tạo ra
 
 > **Note**
 >
@@ -84,3 +83,4 @@
 -   [ ] Add `ljust('.')` in selections
 -   [ ] Sort follow by value
 -   [ ] Sort by Unicode
+-   [ ] Force create Dict In, Out
