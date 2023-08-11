@@ -1,12 +1,30 @@
-# DICT TOOL ✨ ![GitHub repo size](https://img.shields.io/github/repo-size/KevinNitroG/Dict-Tool?style=for-the-badge) ![GitHub Repo stars](https://img.shields.io/github/stars/KevinNitroG/Dict-Tool?style=for-the-badge)
+<div style="text-align: center;">
+    <pre>
+        <code>
+            ██████╗ ██╗ ██████╗████████╗    ████████╗ ██████╗  ██████╗ ██╗     ███████╗
+            ██╔══██╗██║██╔════╝╚══██╔══╝    ╚══██╔══╝██╔═══██╗██╔═══██╗██║     ██╔════╝
+            ██║  ██║██║██║        ██║          ██║   ██║   ██║██║   ██║██║     ███████╗
+            ██║  ██║██║██║        ██║          ██║   ██║   ██║██║   ██║██║     ╚════██║
+            ██████╔╝██║╚██████╗   ██║          ██║   ╚██████╔╝╚██████╔╝███████╗███████║
+            ╚═════╝ ╚═╝ ╚═════╝   ╚═╝          ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝
+        </code>
+    </pre>
+</div>
 
-Python script giúp quản lý, chuyển đổi từ điển _(bảng gõ tắt)_ giữa các bộ gõ
+<!-- # DICT TOOL ✨  -->
+
+<div style="text-align: center;">
+
+![GitHub repo size](https://img.shields.io/github/repo-size/KevinNitroG/Dict-Tool?style=for-the-badge) ![GitHub Repo stars](https://img.shields.io/github/stars/KevinNitroG/Dict-Tool?style=for-the-badge) [![Download Dict Convert](https://img.shields.io/badge/dict_convert-download-yellow?style=for-the-badge)](https://github.com/KevinNitroG/Dict-Tool/archive/refs/heads/main.zip)
+
+<h3>Python script giúp quản lý, chuyển đổi từ điển <i>(bảng gõ tắt)</i> giữa các bộ gõ</h3>
+</div>
 
 ---
 
 ## TÍNH NĂNG 🪶
 
--   Chuyển đổi giữa các dictionary trong danh sách [bộ gõ hỗ trợ](#bộ-gõ-hỗ-trợ)
+-   Chuyển đổi giữa các dictionary trong danh sách [**bộ gõ hỗ trợ**](#bộ-gõ-hỗ-trợ-📃)
 -   Thêm / xoá gõ tắt cho [**LaTeX**](https://github.com/DenverCoder1/latex-gboard-dictionary)
 -   Thêm / xoá confirm character sau cùng của **key**
     > ví dụ thay vì gõ `xl` -> `xin lỗi` thì sẽ thành `xlf` -> `xin lỗi`. Dễ kiểm soát gõ tắt hơn
@@ -34,19 +52,17 @@ Python script giúp quản lý, chuyển đổi từ điển _(bảng gõ tắt)
     -   **Cách 2:** Copy paste nội dung vào biến `your_dictionary` file [userConstant.py](../userConstants.py)
 -   Chạy file [main.py](../main.py)
 
-> NOTE
+> **Note**
 >
-> Các yêu cầu `[Y/n]`, `[y/N]` nhập hoa thường đều được, mặc định sẽ theo lựa chọn in hoa
+> Các yêu cầu `[Y/n]`, `[y/N]` nhập hoa thường đều được, mặc định sẽ theo lựa chọn **in hoa**
 >
-> Yêu cầu `[a]dd / [r]emove / [u]pdate / [ABORT]` nhập hoa thường đều được, bất kì kí tự nào khác `a`, `r`, `u` chọn `ABORT`
+> Yêu cầu `[a]dd / [r]emove / [u]pdate / [ABORT]` nhập hoa thường đều được, bất kì kí tự nào khác `a`, `r`, `u` sẽ chọn `ABORT`
 
 ### NÂNG CAO 🦾
 
--   Có thể thay đổi một vài thông tin trong file [`userConstants.py`](../userConstants.py) và thêm các dictionary khác ở file [`dictionaryList.py`](../dictionaryList.py)
--   Có thể tuỳ chọn option sẵn mà không cần đợi script hỏi trong file [userOptions.py](../userOptions.py)
-    > Hãy **rename** file [userOptions.py.sample](../userOptions.py.sample) thành `userOptions.py`
-    >
-    > Lưu ý tuỳ chọn trong file này đều là in hoa
+-   Có thể thay đổi một vài biến trong file [`userConstants.py`](../userConstants.py) và thêm các dictionary khác ở file [`dictionaryList.py`](../dictionaryList.py)
+-   Có thể tuỳ chọn option sẵn để skip qua bước script hỏi chọn options [userOptions.py](../userOptions.py)
+    > Hãy **rename** file [userOptions.py.sample](../userOptions.py.sample) thành `userOptions.py`<br>Lưu ý tuỳ chọn trong file này đều là in hoa
 
 <!-- ---
 
