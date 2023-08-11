@@ -1,7 +1,3 @@
-# TODO NOTE
-# ADD LATEXT UPDATE FROM GITHUB: https://github.com/DenverCoder1/latex-gboard-dictionary
-# add ... in selections
-
 from src import *
 
 from userConstants import your_dictionary, input_dict_folder, output_dict_folder
@@ -52,7 +48,7 @@ def main():
     print()
     ask_convert_dict = input("Convert dictionary sang dictionary bộ gõ khác [y/N]: ").upper() if ask_convert_dict is not None else ask_convert_dict
     ask_remove_latex = input("Remove Latext [Y/n]: ").upper() if ask_remove_latex is not None else ask_remove_latex
-    ask_confirm_character = input("Confirm character [a]dd / [r]emove / [u]pdate / [ABORT]: ") if ask_confirm_character is not None else ask_confirm_character
+    ask_confirm_character = input("Confirm character [a]dd / [r]emove / [u]pdate / [ABORT]: ").upper() if ask_confirm_character is not None else ask_confirm_character
     ask_sorten_dict = input("Sort lại theo từ tắt từ a-z [Y/n]: ").upper() if ask_sorten_dict is not None else ask_sorten_dict
     ask_print_final_dictionary = input("In ra converted dictionary [Y/n]: ").upper() if ask_print_final_dictionary is not None else ask_print_final_dictionary
     ask_create_macro = input("Tạo file macro trong directory hiện tại [y/N]: ").upper() if ask_create_macro is not None else ask_create_macro
@@ -70,9 +66,9 @@ def main():
         working_dict = remove_latex(working_dict, latex_format)
 
     # Confirm character
-    if ask_confirm_character == 'r' or ask_confirm_character == 'u':
+    if ask_confirm_character == 'R' or ask_confirm_character == 'U':
         working_dict = remove_confirm_character(working_dict, confirm_character)
-    if ask_confirm_character == 'a' or ask_confirm_character == 'u':
+    if ask_confirm_character == 'A' or ask_confirm_character == 'U':
         working_dict = add_confirm_character(working_dict, confirm_character)
 
     # Sort dict

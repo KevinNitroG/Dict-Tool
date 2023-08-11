@@ -1,36 +1,70 @@
-# DICT CONVERTER ✨ ![GitHub repo size](https://img.shields.io/github/repo-size/KevinNitroG/Dict-Converter?style=for-the-badge) ![GitHub Repo stars](https://img.shields.io/github/stars/KevinNitroG/Dicter-Converter?style=for-the-badge)
+# DICT TOOL ✨ ![GitHub repo size](https://img.shields.io/github/repo-size/KevinNitroG/Dict-Tool?style=for-the-badge) ![GitHub Repo stars](https://img.shields.io/github/stars/KevinNitroG/Dict-Tool?style=for-the-badge)
 
-Python script để chuyển đổi giữa các dictionary của bộ gõ _(Danh sách gõ tắt)_
+Python script giúp quản lý, chuyển đổi từ điển _(bảng gõ tắt)_ giữa các bộ gõ
 
-## TÍNH NĂNG
+---
+
+## TÍNH NĂNG 🪶
 
 -   Chuyển đổi giữa các dictionary trong danh sách [bộ gõ hỗ trợ](#bộ-gõ-hỗ-trợ)
--   Thêm gõ tắt cho [**LaTeX**](https://github.com/DenverCoder1/latex-gboard-dictionary)
+-   Thêm / xoá gõ tắt cho [**LaTeX**](https://github.com/DenverCoder1/latex-gboard-dictionary)
 -   Thêm / xoá confirm character sau cùng của **key**
     > ví dụ thay vì gõ `xl` -> `xin lỗi` thì sẽ thành `xlf` -> `xin lỗi`. Dễ kiểm soát gõ tắt hơn
+-   Sắp xếp lại danh sách gõ tắt theo thứ tự [**ASCII**](https://www.vlsifacts.com/wp-content/uploads/2023/02/ASCII-Code.png)
 
-## BỘ GÕ HỖ TRỢ
+---
+
+## BỘ GÕ HỖ TRỢ 📃
 
 -   [UniKey](https://www.unikey.org/)
 -   [EVKey](https://evkeyvn.com/)
 -   [OpenKey](https://open-key.org/)
 -   [Gboard](https://play.google.com/store/apps/details?id=com.google.android.inputmethod.latin)
 
-## HƯỚNG DẪN
+---
+
+## HƯỚNG DẪN 📄
+
+### CƠ BẢN 🐣
 
 -   Cài đặt [Python](https://www.python.org/downloads/)
--   [Tải repo](https://github.com/KevinNitroG/Dict-Converter/archive/refs/heads/main.zip), giải nén
+-   [Tải repo](https://github.com/KevinNitroG/Dict-Tool/archive/refs/heads/main.zip), giải nén
 -   Chuẩn bị dictionary:
     -   **Cách 1:** Paste file dictionary vào folder repo _(Đuôi `.txt`)_
     -   **Cách 2:** Copy paste nội dung vào biến `your_dictionary` file [userConstant.py](../userConstants.py)
 -   Chạy file [main.py](../main.py)
 
+> NOTE
+>
+> Các yêu cầu `[Y/n]`, `[y/N]` nhập hoa thường đều được, mặc định sẽ theo lựa chọn in hoa
+>
+> Yêu cầu `[a]dd / [r]emove / [u]pdate / [ABORT]` nhập hoa thường đều được, bất kì kí tự nào khác `a`, `r`, `u` chọn `ABORT`
+
+### NÂNG CAO 🦾
+
+-   Có thể thay đổi một vài thông tin trong file [`userConstants.py`](../userConstants.py) và thêm các dictionary khác ở file [`dictionaryList.py`](../dictionaryList.py)
+-   Có thể tuỳ chọn option sẵn mà không cần đợi script hỏi trong file [userOptions.py](../userOptions.py)
+    > Hãy **rename** file [userOptions.py.sample](../userOptions.py.sample) thành `userOptions.py`
+    >
+    > Lưu ý tuỳ chọn trong file này đều là in hoa
+
+<!-- ---
+
 ## LƯU Ý
+ -->
 
--   Đối với **EVKey** do có ký tự đặc biệt ở dòng đầu tiên nên khi tạo file macro sẽ không dùng được. Hãy copy paste nội dung sau khi convert vào file macro của **EVKey** sẵn có
--   Đối với **Gboard**, nếu chọn tạo file macro sẽ có yêu cầu tạo file zip nén lại
+---
 
-## MORE...
+## MORE... 🥰
 
--   Bạn có thể yêu cầu thêm bộ gõ tại [Issues](../../issues)
--   Có thể tạo pull request thêm về bộ gõ, format nằm trong file [dictionaryList.py](../dictionaryList.py)
+-   Bạn có thể yêu cầu thêm bộ gõ tại [Issues](https://github.com/KevinNitroG/Dict-Tool/issues)
+-   Có thể tạo **Pull Request** thêm về bộ gõ, format nằm trong file [dictionaryList.py](../dictionaryList.py)
+
+---
+
+## TO DO 😫
+
+-   [ ] LaTeX function: https://github.com/DenverCoder1/latex-gboard-dictionary
+-   [ ] Add `ljust('.')` in selections
+-   [ ] Sort follow by value
+-   [ ] Sort by Unicode
