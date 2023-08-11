@@ -1,5 +1,6 @@
 import os
 import sys
+import shutil
 
 from .pr import *
 
@@ -28,13 +29,13 @@ def exit_program(msg = "Unkown", exit_code = 0):
     exit(exit_code)
 
 
-def install_requirements():
-    import subprocess
-    import sys
-    try:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
-    except subprocess.CalledProcessError:
-        exit_program("Lỗi khi cài đặt requirements. Hãy dùng cmd và nhập lệnh" + prBold("pip install -r requirements.txt"), 1)
+# def install_requirements():
+#     import subprocess
+#     import sys
+#     try:
+#         subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
+#     except subprocess.CalledProcessError:
+#         exit_program("Lỗi khi cài đặt requirements. Hãy dùng cmd và nhập lệnh" + prBold("pip install -r requirements.txt"), 1)
 
 
 def switch_pwd(pwd):
@@ -43,3 +44,10 @@ def switch_pwd(pwd):
     except FileNotFoundError:
         os.makedirs(pwd)
         os.chdir(pwd)
+
+
+def delete_dir(d):
+    try:
+        shutil.rmtree(d)
+    except FileNotFoundError:
+        pass

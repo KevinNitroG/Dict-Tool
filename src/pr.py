@@ -1,7 +1,15 @@
 def prBanner():
-    from .constants import banner, version
+    from .constants import banner, maintainer, version
     print(prRed(banner))
-    print(prYellow(f"                                            by KevinNitro                                        version {version}\n"))
+    print(prLightBlue(f"                           By {maintainer}                       version {version}"))
+    print()
+
+
+def prTitle(v):
+    v = ' ' + v + ' '
+    print(prBold(prLightBlue(v.center(40, '-'))))
+    print()
+
 
 
 def prRed(v):
@@ -46,3 +54,7 @@ def prItalic(v):
 
 def prUnderline(v):
     return f"\033[4m{v}\033[0m"
+
+
+def prUp(v):
+    return f"\033[1A{v}033[0m"

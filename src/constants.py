@@ -1,12 +1,14 @@
+# generated: https://patorjk.com/software/taag/#p=display&f=ANSI%20Shadow&t=DICT%20TOOLS
 banner = """
-██████╗ ██╗ ██████╗████████╗     ██████╗ ██████╗ ███╗   ██╗██╗   ██╗███████╗██████╗ ████████╗███████╗██████╗ 
-██╔══██╗██║██╔════╝╚══██╔══╝    ██╔════╝██╔═══██╗████╗  ██║██║   ██║██╔════╝██╔══██╗╚══██╔══╝██╔════╝██╔══██╗
-██║  ██║██║██║        ██║       ██║     ██║   ██║██╔██╗ ██║██║   ██║█████╗  ██████╔╝   ██║   █████╗  ██████╔╝
-██║  ██║██║██║        ██║       ██║     ██║   ██║██║╚██╗██║╚██╗ ██╔╝██╔══╝  ██╔══██╗   ██║   ██╔══╝  ██╔══██╗
-██████╔╝██║╚██████╗   ██║       ╚██████╗╚██████╔╝██║ ╚████║ ╚████╔╝ ███████╗██║  ██║   ██║   ███████╗██║  ██║
-╚═════╝ ╚═╝ ╚═════╝   ╚═╝        ╚═════╝ ╚═════╝ ╚═╝  ╚═══╝  ╚═══╝  ╚══════╝╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝"""
-
-version = "1.0"
+██████╗ ██╗ ██████╗████████╗    ████████╗ ██████╗  ██████╗ ██╗     ███████╗
+██╔══██╗██║██╔════╝╚══██╔══╝    ╚══██╔══╝██╔═══██╗██╔═══██╗██║     ██╔════╝
+██║  ██║██║██║        ██║          ██║   ██║   ██║██║   ██║██║     ███████╗
+██║  ██║██║██║        ██║          ██║   ██║   ██║██║   ██║██║     ╚════██║
+██████╔╝██║╚██████╗   ██║          ██║   ╚██████╔╝╚██████╔╝███████╗███████║
+╚═════╝ ╚═╝ ╚═════╝   ╚═╝          ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝
+"""
+maintainer = "KevinNitro"
+version = '1.0'
 
 # # ANSI ESCAPE SEQUENCES
 # BLACK = "\033[0;30m"
@@ -35,3 +37,6 @@ version = "1.0"
 # CLEAR = "\x1b[2K"
 
 EVKey_macro_first_line_binary = b'\xef\xbb\xbf\x03<<\xc4\x90\xc3\xa2y l\xc3\xa0 d\xc3\xb2ng l\xc3\xa0m d\xe1\xba\xa5u Unicode, kh\xc3\xb4ng \xc4\x91\xc6\xb0\xe1\xbb\xa3c s\xe1\xbb\xada ho\xe1\xba\xb7c xo\xc3\xa1 d\xc3\xb2ng n\xc3\xa0y>>\x03\r\n'
+
+latex_raw_github_link = "https://github.com/DenverCoder1/latex-gboard-dictionary/raw/master/dictionary.txt"
+latex_cdn_link = "https://cdn.staticaly.com/gh/DenverCoder1/latex-gboard-dictionary/master/dictionary.txt"
