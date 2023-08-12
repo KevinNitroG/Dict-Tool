@@ -1,11 +1,9 @@
-# Dict .txt files
-/Dictionary In/**/*.txt
-/Dictionary Out/**/*.txt
+# User dicts
+/Dictionary In/
+/Dictionary Out/
+/LaTeX
 
-# Zip dict
-/Dictionary In/*.zip
-
-# own file
+# own files
 test.py
 /old code
 **/__pycache__
