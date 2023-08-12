@@ -1,8 +1,7 @@
 from src import *
 
-from userConstants import your_dictionary, input_dict_folder, output_dict_folder
 from dictionaryList import *
-from userConstants import confirm_character
+from userConstants import *
 
 
 def main():
@@ -12,7 +11,7 @@ def main():
     wait_for_pressed_key()
 
     try:
-        from userOptions import ask_convert_dict, ask_remove_latex, ask_confirm_character, ask_sorten_dict, ask_print_final_dictionary, ask_create_macro
+        from userOptions import ask_convert_dict, ask_latex_function, ask_confirm_character_function, ask_sort_dict, ask_print_final_dictionary, ask_create_macro
     except ModuleNotFoundError:
         pass
 
@@ -32,52 +31,53 @@ def main():
     # Specify the format type of current dict
     current_dict['format_type'] = specify_format_type(current_dict['format'])
     # split each line into parts using re.match
-    working_dict = split_working_dict(working_dict, current_dict["re_compile_pattern"], current_dict['format_type'])
+    working_dict = split_dict(working_dict, current_dict["re_compile_pattern"], current_dict['format_type'])
     switch_pwd('../')
+    print()
     print(prGreen("Done reading!"))
     print()
-    # clear_screen()
-
+    clear_screen()
 
     # ASK USER FOR FUNCTIONS
 
 
-    # clear_screen()
+    clear_screen()
     prTitle("CHỌN OPTIONS")
     print(prLightPurple("Chọn theo trong dấu [], lựa chọn nào in hoa sẽ là mặc định"))
     print()
-    ask_convert_dict = input("Convert dictionary sang dictionary bộ gõ khác [y/N]: ").upper() if ask_convert_dict is not None else ask_convert_dict
-    ask_remove_latex = input("Remove Latext [Y/n]: ").upper() if ask_remove_latex is not None else ask_remove_latex
-    ask_confirm_character = input("Confirm character [a]dd / [r]emove / [u]pdate / [ABORT]: ").upper() if ask_confirm_character is not None else ask_confirm_character
-    ask_sorten_dict = input("Sort lại theo từ tắt từ a-z [Y/n]: ").upper() if ask_sorten_dict is not None else ask_sorten_dict
-    ask_print_final_dictionary = input("In ra converted dictionary [Y/n]: ").upper() if ask_print_final_dictionary is not None else ask_print_final_dictionary
-    ask_create_macro = input("Tạo file macro trong directory hiện tại [y/N]: ").upper() if ask_create_macro is not None else ask_create_macro
+    ask_convert_dict = ask_convert_dict.upper() or input("Convert dictionary sang dictionary bộ gõ khác [y/N]: ").upper()
+    ask_latex_function = ask_latex_function.upper() or input("Latex [a]dd / [r]emove / [u]pdate / [ABORT]: ").upper()
+    ask_confirm_character_function = ask_confirm_character_function.upper() or input("Confirm character [a]dd / [r]emove / [u]pdate / [ABORT]: ").upper()
+    ask_sort_dict = ask_sort_dict.upper() or input("Sort lại theo từ tắt từ a-z [Y/n]: ").upper()
+    ask_print_final_dictionary = ask_print_final_dictionary.upper() or input("In ra converted dictionary [Y/n]: ").upper()
+    ask_create_macro = ask_create_macro.upper() or input("Tạo file macro trong directory hiện tại [y/N]: ").upper()
     print()
-    # clear_screen()
+    clear_screen()
 
 
     # EXECUTE OPTIONAL FUNCTIONS
     prTitle("EXECUTE FUNCTIONS")
-    print(prLightPurple("Working..."))
+    print(prLightPurple("WORKING..."))
+    print()
 
-    # Remove LaTeX
-    if ask_remove_latex == 'Y' or ask_remove_latex == '':
-        from userConstants import latex_format
-        working_dict = remove_latex(working_dict, latex_format)
+    # # Remove LaTeX old
+    # if ask_remove_latex == 'Y' or ask_remove_latex == '':
+    #     working_dict = remove_latex(working_dict)
 
-    # Confirm character
-    if ask_confirm_character == 'R' or ask_confirm_character == 'U':
-        working_dict = remove_confirm_character(working_dict, confirm_character)
-    if ask_confirm_character == 'A' or ask_confirm_character == 'U':
-        working_dict = add_confirm_character(working_dict, confirm_character)
+    # LaTeX function - compare user input inside function
+    working_dict = latex_function(working_dict, ask_latex_function)
+
+    # Confirm character - compare user input inside function
+    wd = confirm_character_function(working_dict, ask_confirm_character_function, confirm_character)
 
     # Sort dict
-    if ask_sorten_dict == 'Y' or ask_sorten_dict == '':
-        working_dict = sorten_dict(working_dict)
+    if ask_sort_dict == 'Y' or ask_sort_dict == '':
+        working_dict = sort_dict(working_dict, sort_dict_type)
 
     # Convert dict
     if ask_convert_dict == 'Y':
-        prTitle("CHỌN LOẠI DICTIONARY CONVERT SANG")
+        print(prLightPurple("Chọn loại dictionary convert sang:"))
+        print()
         # select your dict to convert
         selected_dict = select_dict_type(dictionary_list)
         # create re_compile_pattern for selected dict

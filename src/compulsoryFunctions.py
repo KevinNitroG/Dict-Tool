@@ -23,11 +23,11 @@ def read_current_dict(yd, adzf):
         # List out the list of file with number
         print(prLightPurple("Chọn file macro:\n"))
         for i, file in enumerate(list_dir, start=1):
-            print(f"{prYellow(i)}\t{file}")
+            print(f"{str(i).rjust(5)}.   {file}")
         _ = int(input("\nNhập số thứ tự file bạn muốn chọn: "))
         selected_file_name = list_dir[_-1]
         # If selection is a dictionary zip file
-        if (True for zip_file_name in adzf if fnmatch.fnmatch(selected_file_name, zip_file_name)):
+        if selected_file_name.endswith('.zip'):
             with zipfile.ZipFile(selected_file_name, 'r') as zip_ref:
                 switch_pwd('./Extracted Folder')
                 zip_ref.extractall("./")
@@ -43,7 +43,9 @@ def read_current_dict(yd, adzf):
 
 def create_re_compile_pattern(cf):
     # cf = current_format
-    return cf.replace('{sort}', '(.*)').replace('{long}', '(.*)')
+    cf = re.escape(cf).replace('\\{sort\\}', '{sort}').replace('\\{long\\}', '{long}')
+    cf = cf.replace('{sort}', '(.*)').replace('{long}', '(.*)')
+    return cf
 
 
 def specify_format_type(cf):
@@ -53,7 +55,7 @@ def specify_format_type(cf):
     return 2
 
 
-def split_working_dict(wd, rc_p, ft):
+def split_dict(wd, rc_p, ft):
     # wd = working_dict
     # rc_p = current_dict['re_compile_pattern']
     # ft = current_dict['format_type']
@@ -72,7 +74,7 @@ def split_working_dict(wd, rc_p, ft):
 def select_dict_type(dl):
     # dl = dict_list
     for i, dict_type in enumerate(dl, start=1):
-        print("{}\t {}".format(prYellow(i).ljust(5, '.'), dict_type["name"]))
+        print("{}.   {}".format(str(i).rjust(5), dict_type["name"]))
     print()
     _ = input(prYellow("Chọn thứ tự: "))
     return dl[int(_)-1]
@@ -83,7 +85,7 @@ def detect_current_dict_type(wd, dl):
     # dl = dict_list
     first_line = wd[0][:-1]
     for dict_type in dl:
-        if first_line == dict_type["first_line"]:
+        if first_line in dict_type["first_line"]:
             _ = input("\nPhát hiện dictionary hiện tại là {}? [Y/n]: ".format(dict_type["name"])).upper()
             if _ == 'Y' or _ == '':
                 return dict_type

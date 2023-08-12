@@ -1,8 +1,9 @@
-# all .txt files
-**/*.txt
+# Dict .txt files
+/Dictionary In/**/*.txt
+/Dictionary Out/**/*.txt
 
-# Gboard zip dictionary
-**/PersonalDictionary*.zip
+# Zip dict
+/Dictionary In/*.zip
 
 # own file
 test.py

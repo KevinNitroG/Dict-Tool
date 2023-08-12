@@ -11,7 +11,7 @@ dictionary_list = [
         'dictionary_zip_file': ''               # if the app require zip dictionary like Gboard
     },
     {
-        'name': 'Gboard - All languages',
+        'name': 'Gboard - All languages',       # please don't change this position of Gboard - All languages
         'specific_name': 'g',
         'format': '{sort}\t{long}\t',
         'first_line': r'# Gboard Dictionary version:1',

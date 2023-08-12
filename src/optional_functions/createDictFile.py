@@ -5,7 +5,7 @@ from ..pr import *
 
 def dictionary_compress(sd):
     import zipfile
-    compress, ext = os.path.splitext(sd['dictionary_zip_file'].replace('*', '').rstrip('-'))
+    compress, ext = os.path.splitext(sd['dictionary_zip_file'].rstrip('-*'))
     compress = compress + '-Generated' + ext
     with zipfile.ZipFile(compress, 'w') as zip_ref:
         zip_ref.write(sd['macro'])

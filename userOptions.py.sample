@@ -1,9 +1,9 @@
-# ALL OF THE VALUE ARE CASE-SENSITIVE, INPUT IN EXACT VALUE (upper or lower)
-# TẤT CẢ GIÁ TRỊ CỦA BIẾN LÀ CASE-SENSITIVE, HÃY NHẬP ĐÚNG IN HOẶC THƯỜNG THEO YÊU CẦU
+# Value isn't matter either upper or lower
+# Giá trị là hoa hay thường đều được
 
 ask_convert_dict = ''                       # Y/N
-ask_remove_latex = ''                       # Y/N
-ask_confirm_character = ''                  # [a]dd / [r]emove / [u]pdate / [ABORT]
-ask_sorten_dict = ''                        # Y/N
+ask_latex_function = ''                     # [a]dd / [r]emove / [u]pdate / [ABORT]
+ask_confirm_character_function = ''         # [a]dd / [r]emove / [u]pdate / [ABORT]
+ask_sort_dict = ''                          # Y/N
 ask_print_final_dictionary = ''             # Y/N
 ask_create_macro = ''                       # Y/N

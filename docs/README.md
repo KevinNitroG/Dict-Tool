@@ -19,17 +19,15 @@
 
 ---
 
-## TÍNH NĂNG 🪶
+## 🪶 TÍNH NĂNG
 
 -   Chuyển đổi giữa các dictionary trong danh sách [**bộ gõ hỗ trợ**](#bộ-gõ-hỗ-trợ-📃)
--   Thêm / xoá gõ tắt cho [**LaTeX**](https://github.com/DenverCoder1/latex-gboard-dictionary)
+-   Thêm / xoá gõ tắt cho [**LaTeX**][LaTeX_Gboard_repo_link]
 -   Thêm / xoá confirm character sau cùng của **key**
     > ví dụ thay vì gõ `xl` -> `xin lỗi` thì sẽ thành `xlf` -> `xin lỗi`. Dễ kiểm soát gõ tắt hơn
--   Sắp xếp lại danh sách gõ tắt theo thứ tự [**ASCII**](https://www.vlsifacts.com/wp-content/uploads/2023/02/ASCII-Code.png)
+-   Sắp xếp lại danh sách gõ tắt theo thứ tự [**ASCII**][ASCII_information]
 
----
-
-## BỘ GÕ HỖ TRỢ 📃
+## 📃 BỘ GÕ HỖ TRỢ
 
 -   [UniKey](https://www.unikey.org/)
 -   [EVKey](https://evkeyvn.com/)
@@ -38,48 +36,52 @@
 
 ---
 
-## HƯỚNG DẪN 📄
+## 📄 HƯỚNG DẪN
 
-### CƠ BẢN 🐣
+### 🐣 CƠ BẢN
 
 1.  Cài đặt [Python](https://www.python.org/downloads/)
 2.  [Tải repo](https://github.com/KevinNitroG/Dict-Tool/archive/refs/heads/main.zip), giải nén
 3.  Chuẩn bị dictionary:
     -   **Cách 1:** Paste file dictionary vào folder [Dictionary In](../Dictionary%20In/)
     -   **Cách 2:** Copy paste nội dung vào biến `your_dictionary` file [userConstant.py](../userConstants.py)
-4.  Chạy file [main.py](../main.py)
-5.  Được tạo ra
+        > Script sẽ ưu tiên trong file [userConstant.py](../userConstants.py)
+4.  Chạy file [DictTool.py](../DictTool.py)
+5.  Dictionary sẽ được tạo ra ở folder [Dictionary Out](../Dictionary%20Out/)
 
 > **Note**
 >
-> Các yêu cầu `[Y/n]`, `[y/N]` nhập hoa thường đều được, mặc định sẽ theo lựa chọn **in hoa**
+> Các yêu cầu `[Y/n]`, `[y/N]` nhập hoa thường đều được, mặc định sẽ theo lựa chọn **in hoa**<br>Bất kì kí tự nào khác sẽ chọn in thường `[y]` hoặc `[n]`
 >
-> Yêu cầu `[a]dd / [r]emove / [u]pdate / [ABORT]` nhập hoa thường đều được, bất kì kí tự nào khác `a`, `r`, `u` sẽ chọn `ABORT`
+> Yêu cầu `[a]dd / [r]emove / [u]pdate / [ABORT]` nhập hoa thường đều được<br>bất kì kí tự nào khác `a`, `r`, `u` _(hoặc in hoa)_ sẽ chọn `ABORT`
 
-### NÂNG CAO 🦾
+### 🦾 NÂNG CAO
 
 -   Có thể thay đổi một vài biến trong file [`userConstants.py`](../userConstants.py) và thêm các dictionary khác ở file [`dictionaryList.py`](../dictionaryList.py)
 -   Có thể tuỳ chọn option sẵn để skip qua bước script hỏi chọn options [userOptions.py](../userOptions.py)
     > Hãy **rename** file [userOptions.py.sample](../userOptions.py.sample) thành `userOptions.py`<br>Lưu ý tuỳ chọn trong file này đều là in hoa
 
-<!-- ---
-
-## LƯU Ý
- -->
-
 ---
 
-## MORE... 🥰
+## 🥰 MORE...
 
 -   Bạn có thể yêu cầu thêm bộ gõ tại [Issues](https://github.com/KevinNitroG/Dict-Tool/issues)
 -   Có thể tạo **Pull Request** thêm về bộ gõ, format nằm trong file [dictionaryList.py](../dictionaryList.py)
 
 ---
 
-## TO DO 😫
+## 🧓 VERSION HISTORY:
 
--   [ ] LaTeX function: https://github.com/DenverCoder1/latex-gboard-dictionary
--   [ ] Add `ljust('.')` in selections
--   [ ] Sort follow by value
+Go to here 👉: [version_history.md](version_history.md)
+
+---
+
+## 😫 TO DO
+
 -   [ ] Sort by Unicode
--   [ ] Force create Dict In, Out
+-   [ ] Better way to handle user input?
+
+<!-- Foot hyperlinks -->
+
+[LaTeX_Gboard_repo_link]: https://github.com/DenverCoder1/latex-gboard-dictionary
+[ASCII_information]: https://www.vlsifacts.com/wp-content/uploads/2023/02/ASCII-Code.png

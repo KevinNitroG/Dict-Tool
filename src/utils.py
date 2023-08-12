@@ -42,6 +42,8 @@ def switch_pwd(pwd):
     try:
         os.chdir(pwd)
     except FileNotFoundError:
+        print(prRed("Oops folder không tồn tại: " + prPurple(pwd)))
+        print(prYellow("Tạo folder: " + prPurple(pwd)))
         os.makedirs(pwd)
         os.chdir(pwd)
 
@@ -49,5 +51,6 @@ def switch_pwd(pwd):
 def delete_dir(d):
     try:
         shutil.rmtree(d)
+        print(prYellow("Đã xoá folder: " + prPurple(d)))
     except FileNotFoundError:
         pass
