@@ -1,4 +1,5 @@
 import os
+import requests
 
 from json import loads
 
@@ -7,11 +8,22 @@ from ..constants import latex_api, latex_cdn_link, latex_raw_github_link
 from ..pr import prGreen, prYellow, prRed, prPurple
 
 from urllib.request import urlopen
-from ..utils import switch_pwd
+from ..utils import switch_pwd, decorator
 from ..compulsoryFunctions import split_dict
 
 
+# SHORT VARS EXPLANATION
+
+# wd = working_dict
+# md = modified_dict
+# a_lf = ask_latex_function
+
 def should_download_latex():
+    print(prYellow("Check status đến LaTeX repo..."))
+    reponse = requests.get(latex_api)
+    if not reponse.ok:
+        print(prRed("Không thể kết nối đến LaTeX repo"))
+        return False
     print(prYellow("Fetch sha của LaTeX dict hiện có trên Github..."))
     with urlopen(latex_api) as f:
         fetched_sha = loads(f.read())['sha']
@@ -27,6 +39,7 @@ def should_download_latex():
         return True
     elif not os.path.exists('LaTeX.txt'):
         return True
+    print(prGreen("Không update LaTeX dictionary hiện có"))
     return False
 
 
@@ -46,9 +59,9 @@ def download_latex():
     print(prGreen("Đã tạo file LaTeX dict trong folder LaTeX với tên:" + prPurple('LaTeX.txt')))
 
 
+@decorator
 def remove_latex(wd):
-    # wd = working_dict
-    # md = modified_dict
+    '''Xoá LaTeX'''
     md = [wd[0]]
     for i in range(1, len(wd)):
         if wd[i][0][0] not in lf:
@@ -56,29 +69,27 @@ def remove_latex(wd):
     return md
 
 
+@decorator
 def add_latex(wd):
-    # wd = working_dict
-    # ld = latex_dict
+    '''Thêm LaTeX'''
     switch_pwd('./LaTeX')
     if should_download_latex():
         download_latex()
+    # If no LaTeX.txt file, skip add LaTeX
+    if not os.path.exists('LaTeX.txt'):
+        print(prRed("Skip add LaTeX ._."))
+        return wd
     with open('LaTeX.txt', 'r', encoding='utf-8') as f:
         ld = f.readlines()
-    ld = split_dict(ld, '(.*)\\t(.*)\\t', 1)
+    ld = split_dict(ld[1:], '(?P<sort>.*)\\t(?P<long>.*)\\t')
     wd += ld
     switch_pwd('../')
     return wd
 
 
 def latex_function(wd, a_lf):
-    # wd = working_dict
-    # a_lf = ask_latex_function
     if a_lf == 'R' or a_lf == 'U':
-        print(prYellow("Đang xoá LaTeX trong Dictionary hiện tại..."))
         wd = remove_latex(wd)
-        print(prGreen("Done"))
     if a_lf == 'A' or a_lf == 'U':
-        print(prYellow("Đang thêm LaTeX vào Dictionary hiện tại..."))
         wd = add_latex(wd)
-        print(prGreen("Done"))
     return wd

@@ -41,13 +41,14 @@
 ### 🐣 CƠ BẢN
 
 1.  Cài đặt [Python](https://www.python.org/downloads/)
-2.  [Tải repo](https://github.com/KevinNitroG/Dict-Tool/archive/refs/heads/main.zip), giải nén
-3.  Chuẩn bị dictionary:
+2.  [Tải repo](https://github.com/KevinNitroG/Dict-Tool/archive/refs/heads/main.zip), giải nén, vào folder repo
+3.  Mở terminal chạy `pip install -r requirements.txt`
+4.  Chuẩn bị dictionary:
     -   **Cách 1:** Paste file dictionary vào folder [Dictionary In](../Dictionary%20In/)
     -   **Cách 2:** Copy paste nội dung vào biến `your_dictionary` file [userConstant.py](../userConstants.py)
         > Script sẽ ưu tiên trong file [userConstant.py](../userConstants.py)
-4.  Chạy file [DictTool.py](../DictTool.py)
-5.  Dictionary sẽ được tạo ra ở folder [Dictionary Out](../Dictionary%20Out/)
+5.  Chạy file [main.py](../main.py)
+6.  Dictionary sẽ được tạo ra ở folder [Dictionary Out](../Dictionary%20Out/)
 
 > **Note**
 >
@@ -65,12 +66,12 @@
 
 ## 🥰 MORE...
 
--   Bạn có thể yêu cầu thêm bộ gõ tại [Issues](https://github.com/KevinNitroG/Dict-Tool/issues)
+-   Có thể yêu cầu thêm bộ gõ tại [Issues](https://github.com/KevinNitroG/Dict-Tool/issues)
 -   Có thể tạo **Pull Request** thêm về bộ gõ, format nằm trong file [dictionaryList.py](../dictionaryList.py)
 
 ---
 
-## 🧓 VERSION HISTORY:
+## 🧓 VERSION HISTORY
 
 Go to here 👉: [version_history.md](version_history.md)
 

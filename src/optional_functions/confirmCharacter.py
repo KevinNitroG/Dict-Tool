@@ -1,9 +1,15 @@
-from ..utils import prYellow, prGreen
+from ..utils import prYellow, prGreen, decorator
+
+
+# SHORT VARS EXPLAINATION
+
+# wd = working_dict
+# cc = confirm_character
+# a_ccf = ask_confirm_character_function
 
 
 def remove_confirm_character(wd, cc):
-    # wd = list of dictionary
-    # cc = confirm_character
+    '''Xoá confirm character'''
     for i in range(1, len(wd)):
         if wd[i][0].endswith(cc):
             wd[i][0] = wd[i][0][:-len(cc)]
@@ -12,23 +18,17 @@ def remove_confirm_character(wd, cc):
 
 
 def add_confirm_character(wd, cc):
-    # wd = list of dictionary
-    # cc = confirm_character
+    '''Thêm confirm character'''
     for i in range(1, len(wd)):
         wd[i] = [wd[i][0] + cc, wd[i][1]]
     return wd
 
 
+@decorator
 def confirm_character_function(wd, a_ccf, cc):
-    # wd = working_dict
-    # a_ccf = ask_confirm_character_function
-    # cc = confirm_character
+    '''Confirm character'''
     if a_ccf == 'R' or a_ccf == 'U':
-        print(prYellow("Đang xoá Confirm Character trong Dictionary hiện tại..."))
         wd = remove_confirm_character(wd, cc)
-        print(prGreen("Done"))
     if a_ccf == 'A' or a_ccf == 'U':
-        print(prYellow("Đang thêm Confirm Character vào Dictionary hiện tại..."))
         wd = add_confirm_character(wd, cc)
-        print(prGreen("Done"))
     return wd

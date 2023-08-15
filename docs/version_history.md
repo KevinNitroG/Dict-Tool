@@ -1,5 +1,11 @@
 # 🧓 VERSION HISTORY
 
+# 1.2
+
+-   Bruh rename [DictTools.py](../DictTool.py) to [main.py](../main.py)
+-   Add decorate function
+-   Add `requests` module to handle network status with LaTeX function, also add skip LaTeX if no LaTeX dict is found
+
 # 1.1
 
 -   **Code changes:**

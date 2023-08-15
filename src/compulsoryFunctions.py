@@ -7,29 +7,39 @@ from .utils import clear_screen, exit_program, switch_pwd, delete_dir
 from .pr import *
 
 
+# SHORT VARS EXPLANATION
+
+# yd = your_dict
+# adzf = all_dict_zip_files
+# lold = list_of_line_dict
+# cf = current_format
+# wd = working_dict
+# rc_p = current_dict['re_compile_pattern']
+# dl = dict_list
+
+
 def read_current_dict(yd, adzf):
-    # yd = your_dict
-    # adzf = all_dict_zip_files
-    # lold = list_of_line_dict
+    '''Đọc dictionary'''
     yd = yd.strip().strip("\n")
     list_dir = []
     if yd != '':
         lold = yd.splitlines()
     else:
-        delete_dir('./Extracted Folder')
+        delete_dir('./Extracted Dict')
         list_dir = [f for f in os.listdir() if (f.endswith('.txt') or True for zip_file_name in adzf if fnmatch.fnmatch(f, zip_file_name))]
         if list_dir == []:
             exit_program("Không tìm thấy bất kì file macro có sẵn trong thư mục hiện tại", 1)
         # List out the list of file with number
         print(prLightPurple("Chọn file macro:\n"))
         for i, file in enumerate(list_dir, start=1):
-            print(f"{str(i).rjust(5)}.   {file}")
+            print("{}.   {}".format(str(i).rjust(5), file))
         _ = int(input("\nNhập số thứ tự file bạn muốn chọn: "))
+        print()
         selected_file_name = list_dir[_-1]
         # If selection is a dictionary zip file
         if selected_file_name.endswith('.zip'):
             with zipfile.ZipFile(selected_file_name, 'r') as zip_ref:
-                switch_pwd('./Extracted Folder')
+                switch_pwd('./Extracted Dict')
                 zip_ref.extractall("./")
                 os.rename(zip_ref.namelist()[0], 'extracted_dictionary.txt')
             with open('extracted_dictionary.txt', 'r', encoding='utf-8') as file:
@@ -42,51 +52,43 @@ def read_current_dict(yd, adzf):
 
 
 def create_re_compile_pattern(cf):
-    # cf = current_format
-    cf = re.escape(cf).replace('\\{sort\\}', '{sort}').replace('\\{long\\}', '{long}')
-    cf = cf.replace('{sort}', '(.*)').replace('{long}', '(.*)')
+    '''Tạo re.compile pattern'''
+    cf = re.escape(cf).replace('\\{sort\\}', '(?P<sort>.*)').replace('\\{long\\}', '(?P<long>.*)')
     return cf
 
 
-def specify_format_type(cf):
-    # cf = current_format
-    if cf.index('{sort}') < cf.index('{long}'):
-        return 1
-    return 2
+# Detech which type is the dict, {sort} before {long} or vice versa
+# def specify_format_type(cf):
+#     # cf = current_format
+#     if cf.index('{sort}') < cf.index('{long}'):
+#         return 1
+#     return 2
 
 
-def split_dict(wd, rc_p, ft):
-    # wd = working_dict
-    # rc_p = current_dict['re_compile_pattern']
-    # ft = current_dict['format_type']
+def split_dict(wd, rc_p):
+    '''Tách dictionary thành list'''
     pattern = re.compile(rc_p)
-    if ft == 1:
-        for i in range(1, len(wd)):
-            match = re.search(pattern, wd[i])
-            wd[i] = [match.group(1), match.group(2)]
-    else:
-        for i in range(1, len(wd)):
-            match = re.search(pattern, wd[i])
-            wd[i] = [match.group(2), match.group(1)]
+    for i in range(1, len(wd)):
+        match = re.search(pattern, wd[i])
+        wd[i] = [match.group('sort'), match.group('long')]
     return wd
 
 
 def select_dict_type(dl):
-    # dl = dict_list
+    '''Chọn loại dictionary'''
     for i, dict_type in enumerate(dl, start=1):
         print("{}.   {}".format(str(i).rjust(5), dict_type["name"]))
     print()
-    _ = input(prYellow("Chọn thứ tự: "))
+    _ = input("Chọn thứ tự: ")
     return dl[int(_)-1]
 
 
 def detect_current_dict_type(wd, dl):
-    # wd = working_dict
-    # dl = dict_list
+    '''Tự động nhận diện loại dictionary'''
     first_line = wd[0][:-1]
     for dict_type in dl:
         if first_line in dict_type["first_line"]:
-            _ = input("\nPhát hiện dictionary hiện tại là {}? [Y/n]: ".format(dict_type["name"])).upper()
+            _ = input("Dictionary hiện tại là {}? [Y/n]: ".format(dict_type["name"])).upper()
             if _ == 'Y' or _ == '':
                 return dict_type
             else:
@@ -102,5 +104,5 @@ def detect_current_dict_type(wd, dl):
 
 
 def join_working_dict(wd):
-    # wd = working_dict
+    '''Gộp list dictionary hoàn chỉnh'''
     return '\n'.join(wd)

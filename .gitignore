@@ -8,3 +8,7 @@ test.py
 /old code
 **/__pycache__
 userOptions.py
+
+# others
+**/*temp*
+**/*test*

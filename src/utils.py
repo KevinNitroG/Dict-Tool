@@ -42,8 +42,8 @@ def switch_pwd(pwd):
     try:
         os.chdir(pwd)
     except FileNotFoundError:
-        print(prRed("Oops folder không tồn tại: " + prPurple(pwd)))
-        print(prYellow("Tạo folder: " + prPurple(pwd)))
+        print(prRed("Oops folder không tồn tại: \t" + prPurple(pwd)))
+        print(prYellow("Tạo folder: \t\t\t" + prPurple(pwd)))
         os.makedirs(pwd)
         os.chdir(pwd)
 
@@ -54,3 +54,12 @@ def delete_dir(d):
         print(prYellow("Đã xoá folder: " + prPurple(d)))
     except FileNotFoundError:
         pass
+
+
+def decorator(f):
+    def wrapper(*args, **kwargs):
+        print(prLightBlue("WORKING:\t"), prLightPurple(f.__doc__))
+        result = f(*args, **kwargs)
+        print(prGreen("DONE:\t\t"), prLightPurple(f.__doc__))
+        return result
+    return wrapper
