@@ -89,8 +89,8 @@ def add_latex(wd):
 
 
 def latex_function(wd, a_lf):
-    if a_lf == 'R' or a_lf == 'U':
+    if a_lf in ('R', 'U'):
         wd = remove_latex(wd)
-    if a_lf == 'A' or a_lf == 'U':
+    if a_lf in ('A', 'U'):
         wd = add_latex(wd)
     return wd

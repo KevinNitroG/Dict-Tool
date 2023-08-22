@@ -27,8 +27,8 @@ def add_confirm_character(wd, cc):
 @decorator
 def confirm_character_function(wd, a_ccf, cc):
     '''Confirm character'''
-    if a_ccf == 'R' or a_ccf == 'U':
+    if a_ccf in ('R', 'U'):
         wd = remove_confirm_character(wd, cc)
-    if a_ccf == 'A' or a_ccf == 'U':
+    if a_ccf in ('A', 'U'):
         wd = add_confirm_character(wd, cc)
     return wd

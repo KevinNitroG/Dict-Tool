@@ -36,7 +36,7 @@ def create_converted_dictionary_as_file(fd, sd):
     if os.path.exists(sd['macro']):
         _ = input(
             "File macro đã hiện có tại đường dẫn hiện tại, có muốn ghi đè [Y/n]: ").upper()
-    if _ == 'Y' or _ == '':
+    if _ in ('Y', ''):
         if sd['specific_name'] == 'e':
             evkey_special_create_file(fd, sd['macro'])
         else:
@@ -46,7 +46,7 @@ def create_converted_dictionary_as_file(fd, sd):
                   prPurple(sd['macro']))
             if sd['dictionary_zip_file']:
                 _ = input("Tạo file zip dictionary [Y/n]: ")
-                if _ == 'Y' or _ == '':
+                if _ in ('Y', ''):
                     dictionary_compress(sd)
     else:
         print(prCyan("Đã huỷ tạo file macro"))
