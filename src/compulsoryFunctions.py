@@ -26,9 +26,11 @@ def read_current_dict(yd, adzf):
         lold = yd.splitlines()
     else:
         delete_dir('./Extracted Dict')
-        list_dir = [f for f in os.listdir() if (f.endswith('.txt') or True for zip_file_name in adzf if fnmatch.fnmatch(f, zip_file_name))]
+        list_dir = [f for f in os.listdir() if (f.endswith(
+            '.txt') or True for zip_file_name in adzf if fnmatch.fnmatch(f, zip_file_name))]
         if list_dir == []:
-            exit_program("Không tìm thấy bất kì file macro có sẵn trong thư mục hiện tại", 1)
+            exit_program(
+                "Không tìm thấy bất kì file macro có sẵn trong thư mục hiện tại", 1)
         # List out the list of file with number
         print(prLightPurple("Chọn file macro:\n"))
         for i, file in enumerate(list_dir, start=1):
@@ -53,7 +55,8 @@ def read_current_dict(yd, adzf):
 
 def create_re_compile_pattern(cf):
     '''Tạo re.compile pattern'''
-    cf = re.escape(cf).replace('\\{sort\\}', '(?P<sort>.*)').replace('\\{long\\}', '(?P<long>.*)')
+    cf = re.escape(cf).replace(
+        '\\{sort\\}', '(?P<sort>.*)').replace('\\{long\\}', '(?P<long>.*)')
     return cf
 
 
@@ -88,14 +91,16 @@ def detect_current_dict_type(wd, dl):
     first_line = wd[0][:-1]
     for dict_type in dl:
         if first_line in dict_type["first_line"]:
-            _ = input("Dictionary hiện tại là {}? [Y/n]: ".format(dict_type["name"])).upper()
+            _ = input(
+                "Dictionary hiện tại là {}? [Y/n]: ".format(dict_type["name"])).upper()
             if _ == 'Y' or _ == '':
                 return dict_type
             else:
                 print(prLightPurple("\nChọn loại dictionary bộ gõ hiện tại\n"))
                 return select_dict_type(dl)
     # NO AVAILABLE DICTIONARY TYPE MATCH
-    _ = input("\nKhông thể nhận diện được dictionary hiện tại. Chọn thủ công? [Y/n]: ").upper()
+    _ = input(
+        "\nKhông thể nhận diện được dictionary hiện tại. Chọn thủ công? [Y/n]: ").upper()
     if _ == 'Y' or _ == '':
         print(prLightPurple("\nChọn loại dictionary bộ gõ hiện tại\n"))
         return select_dict_type(dl)

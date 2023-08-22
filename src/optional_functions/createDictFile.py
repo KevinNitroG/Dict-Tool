@@ -34,14 +34,16 @@ def create_converted_dictionary_as_file(fd, sd):
     '''Tạo file dictionary'''
     _ = 'Y'
     if os.path.exists(sd['macro']):
-        _ = input("File macro đã hiện có tại đường dẫn hiện tại, có muốn ghi đè [Y/n]: ").upper()
+        _ = input(
+            "File macro đã hiện có tại đường dẫn hiện tại, có muốn ghi đè [Y/n]: ").upper()
     if _ == 'Y' or _ == '':
-        if sd['specific_name']  == 'e':
+        if sd['specific_name'] == 'e':
             evkey_special_create_file(fd, sd['macro'])
         else:
             with open(sd['macro'], 'w', encoding="utf-8") as file:
                 file.write(fd)
-            print(prGreen("File macro đã được tạo ^^. Tên file: ") + prPurple(sd['macro']))
+            print(prGreen("File macro đã được tạo ^^. Tên file: ") +
+                  prPurple(sd['macro']))
             if sd['dictionary_zip_file']:
                 _ = input("Tạo file zip dictionary [Y/n]: ")
                 if _ == 'Y' or _ == '':

@@ -56,7 +56,8 @@ def download_latex():
     print(prGreen("Done"))
     with open('LaTeX.txt', 'w', encoding='utf-8') as f:
         f.write(latex_dict)
-    print(prGreen("Đã tạo file LaTeX dict trong folder LaTeX với tên:" + prPurple('LaTeX.txt')))
+    print(prGreen("Đã tạo file LaTeX dict trong folder LaTeX với tên:" +
+          prPurple('LaTeX.txt')))
 
 
 @decorator
