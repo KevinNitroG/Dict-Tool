@@ -69,7 +69,7 @@ def main():
         working_dict, ask_confirm_character_function, confirm_character)
 
     # Sort dict
-    if ask_sort_dict == 'Y' or ask_sort_dict == '':
+    if ask_sort_dict in ('Y', ''):
         working_dict = sort_dict(working_dict, sort_dict_type)
 
     # Convert dict
@@ -95,7 +95,7 @@ def main():
     # FINISH JOBS
 
     # Print dictionary
-    if ask_print_final_dictionary == 'Y' or ask_print_final_dictionary == '':
+    if ask_print_final_dictionary in ('Y', ''):
         prTitle("PRINT DICTIONARY")
         print(working_dict)
         print()

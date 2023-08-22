@@ -93,7 +93,7 @@ def detect_current_dict_type(wd, dl):
         if first_line in dict_type["first_line"]:
             _ = input(
                 "Dictionary hiện tại là {}? [Y/n]: ".format(dict_type["name"])).upper()
-            if _ == 'Y' or _ == '':
+            if _ in ('Y', ''):
                 return dict_type
             else:
                 print(prLightPurple("\nChọn loại dictionary bộ gõ hiện tại\n"))
@@ -101,7 +101,7 @@ def detect_current_dict_type(wd, dl):
     # NO AVAILABLE DICTIONARY TYPE MATCH
     _ = input(
         "\nKhông thể nhận diện được dictionary hiện tại. Chọn thủ công? [Y/n]: ").upper()
-    if _ == 'Y' or _ == '':
+    if _ in ('Y', ''):
         print(prLightPurple("\nChọn loại dictionary bộ gõ hiện tại\n"))
         return select_dict_type(dl)
     else:
