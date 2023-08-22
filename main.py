@@ -65,7 +65,7 @@ def main():
     working_dict = latex_function(working_dict, ask_latex_function)
 
     # Confirm character - compare user input inside function
-    wd = confirm_character_function(
+    working_dict = confirm_character_function(
         working_dict, ask_confirm_character_function, confirm_character)
 
     # Sort dict
