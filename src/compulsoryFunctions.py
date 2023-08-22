@@ -3,7 +3,7 @@ import zipfile
 import os
 import re
 
-from .utils import clear_screen, exit_program, switch_pwd, delete_dir
+from .utils import exit_program, switch_pwd, delete_dir
 from .pr import *
 
 
