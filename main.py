@@ -15,19 +15,20 @@ def main():
     except ModuleNotFoundError:
         pass
 
-
     # PREPARE...
 
     prTitle("PREPARE")
     print(prLightPurple("Reading your dictionary...\n"))
     switch_pwd(input_dict_folder)
-    all_dict_zip_file = [dict['dictionary_zip_file'] for dict in dictionary_list if dict['dictionary_zip_file']]
+    all_dict_zip_file = [dict['dictionary_zip_file']
+                         for dict in dictionary_list if dict['dictionary_zip_file']]
     # read your dict file
     working_dict = read_current_dict(your_dictionary, all_dict_zip_file)
     # detect your dict file
     current_dict = detect_current_dict_type(working_dict, dictionary_list)
     # create re_compile_pattern for current dict
-    current_dict['re_compile_pattern'] = create_re_compile_pattern(current_dict['format'])
+    current_dict['re_compile_pattern'] = create_re_compile_pattern(
+        current_dict['format'])
     # split each line into parts using re.match
     working_dict = split_dict(working_dict, current_dict["re_compile_pattern"])
     switch_pwd('../')
@@ -38,20 +39,24 @@ def main():
 
     # ASK USER FOR FUNCTIONS
 
-
     clear_screen()
     prTitle("CHỌN OPTIONS")
     print(prLightPurple("Chọn theo trong dấu [], lựa chọn nào in hoa sẽ là mặc định"))
     print()
-    ask_convert_dict = ask_convert_dict.upper() or input("Convert dictionary sang dictionary bộ gõ khác [y/N]: ").upper()
-    ask_latex_function = ask_latex_function.upper() or input("Latex [a]dd / [r]emove / [u]pdate / [ABORT]: ").upper()
-    ask_confirm_character_function = ask_confirm_character_function.upper() or input("Confirm character [a]dd / [r]emove / [u]pdate / [ABORT]: ").upper()
-    ask_sort_dict = ask_sort_dict.upper() or input("Sort lại theo từ tắt từ a-z [Y/n]: ").upper()
-    ask_print_final_dictionary = ask_print_final_dictionary.upper() or input("In ra converted dictionary [Y/n]: ").upper()
-    ask_create_macro = ask_create_macro.upper() or input("Tạo file macro trong directory hiện tại [y/N]: ").upper()
+    ask_convert_dict = ask_convert_dict.upper() or input(
+        "Convert dictionary sang dictionary bộ gõ khác [y/N]: ").upper()
+    ask_latex_function = ask_latex_function.upper() or input(
+        "Latex [a]dd / [r]emove / [u]pdate / [ABORT]: ").upper()
+    ask_confirm_character_function = ask_confirm_character_function.upper() or input(
+        "Confirm character [a]dd / [r]emove / [u]pdate / [ABORT]: ").upper()
+    ask_sort_dict = ask_sort_dict.upper() or input(
+        "Sort lại theo từ tắt từ a-z [Y/n]: ").upper()
+    ask_print_final_dictionary = ask_print_final_dictionary.upper() or input(
+        "In ra converted dictionary [Y/n]: ").upper()
+    ask_create_macro = ask_create_macro.upper() or input(
+        "Tạo file macro trong directory hiện tại [y/N]: ").upper()
     print()
     clear_screen()
-
 
     # EXECUTE OPTIONAL FUNCTIONS
     prTitle("EXECUTE FUNCTIONS")
@@ -60,7 +65,8 @@ def main():
     working_dict = latex_function(working_dict, ask_latex_function)
 
     # Confirm character - compare user input inside function
-    wd = confirm_character_function(working_dict, ask_confirm_character_function, confirm_character)
+    wd = confirm_character_function(
+        working_dict, ask_confirm_character_function, confirm_character)
 
     # Sort dict
     if ask_sort_dict == 'Y' or ask_sort_dict == '':
@@ -73,7 +79,8 @@ def main():
         # select your dict to convert
         selected_dict = select_dict_type(dictionary_list)
         # create re_compile_pattern for selected dict
-        selected_dict['re_compile_pattern'] = create_re_compile_pattern(selected_dict['format'])
+        selected_dict['re_compile_pattern'] = create_re_compile_pattern(
+            selected_dict['format'])
     else:
         selected_dict = current_dict
 
@@ -85,9 +92,7 @@ def main():
     print(prGreen("Done executing functions!"))
     print()
 
-
     # FINISH JOBS
-
 
     # Print dictionary
     if ask_print_final_dictionary == 'Y' or ask_print_final_dictionary == '':

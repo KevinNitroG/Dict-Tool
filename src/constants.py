@@ -42,5 +42,6 @@ latex_api = "https://api.github.com/repos/DenverCoder1/latex-gboard-dictionary/c
 
 EVKey_macro_first_line_binary = b'\xef\xbb\xbf\x03<<\xc4\x90\xc3\xa2y l\xc3\xa0 d\xc3\xb2ng l\xc3\xa0m d\xe1\xba\xa5u Unicode, kh\xc3\xb4ng \xc4\x91\xc6\xb0\xe1\xbb\xa3c s\xe1\xbb\xada ho\xe1\xba\xb7c xo\xc3\xa1 d\xc3\xb2ng n\xc3\xa0y>>\x03\r\n'
 
-MetaCharacters = ['\\', '.', '^', '$', '*', '+', '?' ,'{', '}', '[', ']', '|', '(', ')']
+MetaCharacters = ['\\', '.', '^', '$', '*',
+                  '+', '?', '{', '}', '[', ']', '|', '(', ')']
 latex_format = ['\\', '^', '_', '-']

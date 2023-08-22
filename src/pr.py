@@ -1,7 +1,8 @@
 def prBanner():
     from .constants import banner, maintainer, version
     print(prRed(banner))
-    print(prLightBlue(f"                           By {maintainer}                       version {version}"))
+    print(prLightBlue(
+        f"                           By {maintainer}                       version {version}"))
     print()
 
 
@@ -9,7 +10,6 @@ def prTitle(v):
     v = ' ' + v + ' '
     print(prBold(prLightBlue(v.center(40, '-'))))
     print()
-
 
 
 def prRed(v):

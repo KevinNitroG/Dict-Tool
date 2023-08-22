@@ -18,8 +18,8 @@ def wait_for_pressed_key():
     clear_screen()
 
 
-def exit_program(msg = "Unkown", exit_code = 0):
-    print(prBold(prLightBlue("KẾT THÚC".center(40, '-'))), end= '\n\n')
+def exit_program(msg="Unkown", exit_code=0):
+    print(prBold(prLightBlue("KẾT THÚC".center(40, '-'))), end='\n\n')
     if exit_code == 0:
         print(prCyan(msg))
     else:
