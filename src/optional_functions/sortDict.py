@@ -1,4 +1,4 @@
-from ..utils import prYellow, prGreen, prBlue, decorator
+from ..utils import prYellow, prBlue, decorator
 
 
 # SHORT VARS EXPLANATION
