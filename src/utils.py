@@ -2,6 +2,7 @@ import os
 import shutil
 
 from .pr import *
+import sys
 
 
 def clear_screen():
@@ -25,7 +26,7 @@ def exit_program(msg="Unkown", exit_code=0):
         print(prRed(msg))
     print()
     os.system('pause')
-    exit(exit_code)
+    sys.exit(exit_code)
 
 
 # def install_requirements():
