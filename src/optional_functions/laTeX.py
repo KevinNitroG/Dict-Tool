@@ -37,7 +37,7 @@ def should_download_latex():
         with open('LaTeX-sha.txt', 'w') as f:
             f.write(fetched_sha)
         return True
-    elif not os.path.exists('LaTeX.txt'):
+    if not os.path.exists('LaTeX.txt'):
         return True
     print(prGreen("Không update LaTeX dictionary hiện có"))
     return False
