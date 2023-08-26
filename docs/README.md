@@ -41,7 +41,7 @@
 ### 🐣 CƠ BẢN
 
 1.  Cài đặt [Python](https://www.python.org/downloads/)
-2.  [Tải repo](https://github.com/KevinNitroG/Dict-Tool/archive/refs/heads/main.zip), giải nén, vào folder repo
+2.  [Tải soure code về](https://github.com/KevinNitroG/Dict-Tool/releases/latest), giải nén, vào folder repo
 3.  Mở terminal chạy `pip install -r requirements.txt`
 4.  Chuẩn bị dictionary:
     -   **Cách 1:** Paste file dictionary vào folder [Dictionary In](../Dictionary%20In/)
@@ -58,6 +58,7 @@
 
 ### 🦾 NÂNG CAO
 
+-   Có thể tải [latest source code](https://github.com/KevinNitroG/Dict-Tool/archive/refs/heads/main.zip) về _(Bản beta kiểu vậy)_
 -   Có thể thay đổi một vài biến trong file [`userConstants.py`](../userConstants.py) và thêm các dictionary khác ở file [`dictionaryList.py`](../dictionaryList.py)
 -   Có thể tuỳ chọn option sẵn để skip qua bước script hỏi chọn options [userOptions.py](../userOptions.py)
     > Hãy **rename** file [userOptions.py.sample](../userOptions.py.sample) thành `userOptions.py`<br>Lưu ý tuỳ chọn trong file này đều là in hoa

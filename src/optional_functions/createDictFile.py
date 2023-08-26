@@ -11,6 +11,7 @@ from ..utils import decorator
 
 
 def dictionary_compress(sd):
+    """Compress dictionary"""
     import zipfile
     compress, ext = os.path.splitext(sd['dictionary_zip_file'].rstrip('-*'))
     compress = compress + '-Generated' + ext
@@ -20,18 +21,19 @@ def dictionary_compress(sd):
 
 
 def evkey_special_create_file(content, evkey_macro):
+    """Special method to create EVKey macro file"""
     content = content[69:]
     from ..constants import EVKey_macro_first_line_binary as first_line
-    with open(evkey_macro, 'wb') as f:
-        f.write(first_line)
-    with open(evkey_macro, 'a', encoding='utf-8') as f:
-        f.write(content)
+    with open(evkey_macro, 'wb') as file:
+        file.write(first_line)
+    with open(evkey_macro, 'a', encoding='utf-8') as file:
+        file.write(content)
     print(prGreen("File macro đã được tạo ^^. Tên file: ") + prPurple(evkey_macro))
 
 
 @decorator
 def create_converted_dictionary_as_file(fd, sd):
-    '''Tạo file dictionary'''
+    """Create dictionary file"""
     _ = 'Y'
     if os.path.exists(sd['macro']):
         _ = input(

@@ -8,7 +8,7 @@ banner = """
 ╚═════╝ ╚═╝ ╚═════╝   ╚═╝          ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝╚══════╝
 """
 maintainer = "KevinNitro"
-version = '1.2'
+version = '1.3'
 
 # # ANSI ESCAPE SEQUENCES
 # BLACK = "\033[0;30m"

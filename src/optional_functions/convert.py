@@ -1,4 +1,5 @@
 def convert(wd, sd):
+    """Covert dictionary"""
     # wd = working_dict
     # sd = selected_dict
     wd[0] = sd['first_line']

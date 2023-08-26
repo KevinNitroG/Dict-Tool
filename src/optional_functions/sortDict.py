@@ -10,7 +10,7 @@ from ..utils import prYellow, prBlue, decorator
 
 @decorator
 def sort_dict(wd, sdt):
-    '''Sort dictionary'''
+    """Sort dictionary"""
     print(prYellow("Sort Dictionary theo kiểu " + prBlue(sdt)))
     md = [wd[0]]
     md += sorted(wd[1:], key=lambda x: x[sdt - 1])

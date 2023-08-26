@@ -1,11 +1,12 @@
 import os
 import shutil
+import sys
 
 from .pr import *
-import sys
 
 
 def clear_screen():
+    """Clear running screen"""
     if os.name == 'nt':  # for Windows
         os.system('cls')
     else:  # for Linux and Mac
@@ -13,12 +14,14 @@ def clear_screen():
 
 
 def wait_for_pressed_key():
+    """Wait for user keyboard input"""
     print()
     os.system('pause')
     clear_screen()
 
 
 def exit_program(msg="Unkown", exit_code=0):
+    """Exit program"""
     print(prBold(prLightBlue("KẾT THÚC".center(40, '-'))), end='\n\n')
     if exit_code == 0:
         print(prCyan(msg))
@@ -39,6 +42,7 @@ def exit_program(msg="Unkown", exit_code=0):
 
 
 def switch_pwd(pwd):
+    """Switch present working directory"""
     try:
         os.chdir(pwd)
     except FileNotFoundError:
@@ -49,6 +53,7 @@ def switch_pwd(pwd):
 
 
 def delete_dir(d):
+    """Delete directory"""
     try:
         shutil.rmtree(d)
         print(prYellow("Đã xoá folder: " + prPurple(d)))
@@ -57,6 +62,7 @@ def delete_dir(d):
 
 
 def decorator(f):
+    """Log?"""
     def wrapper(*args, **kwargs):
         print(prLightBlue("WORKING:\t"), prLightPurple(f.__doc__))
         result = f(*args, **kwargs)

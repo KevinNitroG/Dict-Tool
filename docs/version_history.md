@@ -1,5 +1,19 @@
 # 🧓 VERSION HISTORY
 
+# 1.3
+
+-   **Beauty:**
+
+    -   Pep8 format,... by deepsource bot
+    -   Doc for function: Change to Eng, double quotes
+    -   README.md change the download source code to latest release site
+
+-   **Code changes:**
+    -   Delete unused function _(Dict type for ... sort?)_
+    -   Add request get timeout = 5 second for get LaTeX api
+    -   Remove 'dictionary_zip_file' in [dictList](../dictionaryList.py)
+    -   Input dict: all kind of files :v
+
 # 1.2
 
 -   Bruh rename [DictTools.py](../DictTool.py) to [main.py](../main.py)

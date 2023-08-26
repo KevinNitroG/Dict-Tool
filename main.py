@@ -1,4 +1,7 @@
-from src import *
+from src import clear_screen, wait_for_pressed_key, switch_pwd, exit_program
+from src import prBanner, prTitle, prGreen, prBlue, prLightPurple
+from src import read_current_dict, detect_current_dict_type, create_re_compile_pattern, split_dict, select_dict_type, join_working_dict
+from src import latex_function, confirm_character_function, sort_dict, convert, create_converted_dictionary_as_file
 
 from dictionaryList import *
 from userConstants import *
@@ -20,10 +23,8 @@ def main():
     prTitle("PREPARE")
     print(prLightPurple("Reading your dictionary...\n"))
     switch_pwd(input_dict_folder)
-    all_dict_zip_file = [dict['dictionary_zip_file']
-                         for dict in dictionary_list if dict['dictionary_zip_file']]
     # read your dict file
-    working_dict = read_current_dict(your_dictionary, all_dict_zip_file)
+    working_dict = read_current_dict(your_dictionary)
     # detect your dict file
     current_dict = detect_current_dict_type(working_dict, dictionary_list)
     # create re_compile_pattern for current dict

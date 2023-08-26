@@ -7,47 +7,41 @@ dictionary_list = [
         'specific_name': 'r',                   # specific name to easier to call in script, anything you like, you can leave it to ''
         'format': '{sort}#raw#{long}',          # the format of the key and value to replace
         'first_line': r'#raw#',                 # the first line in the macro file
-        'macro': 'raw_macro.txt',               # macro file name
-        'dictionary_zip_file': ''               # if the app require zip dictionary like Gboard
+        'macro': 'raw_macro.txt'                # macro file name
     },
     {
         'name': 'Gboard - All languages',
         'specific_name': 'g',
         'format': '{sort}\t{long}\t',
         'first_line': r'# Gboard Dictionary version:1',
-        'macro': 'dictionary.txt',
-        'dictionary_zip_file': 'PersonalDictionary-*.zip'
+        'macro': 'dictionary.txt'
     },
     {
         'name': 'Gboard - Vietnamese',
         'specific_name': 'g',
         'format': '{sort}\t{long}\tvi',
         'first_line': r'# Gboard Dictionary version:1',
-        'macro': 'dictionary.txt',
-        'dictionary_zip_file': 'PersonalDictionary-*.zip'
+        'macro': 'dictionary.txt'
     },
     {
         'name': 'OpenKey',
         'specific_name': 'o',
         'format': '{sort}:{long}',
         'first_line': r';Compatible OpenKey Macro Data file for UniKey*** version=1 ***',
-        'macro': 'OpenKeyMacro.txt',
-        'dictionary_zip_file': ''
+        'macro': 'OpenKeyMacro.txt'
     },
     {
         'name': 'EVKey',
         'specific_name': 'e',
         'format': '{sort}||{long}',
         'first_line': r'<<Đây là dòng làm dấu Unicode, không được sửa hoặc xoá dòng này>>',
-        'macro': 'evkmacro.txt',
-        'dictionary_zip_file': ''
+        'macro': 'evkmacro.txt'
     },
     {
         'name': 'UniKey',
         'specific_name': 'u',
         'format': '{sort}:{long}',
         'first_line': r';DO NOT DELETE THIS LINE*** version=1 ***',
-        'macro': 'ukmacro.txt',
-        'dictionary_zip_file': ''
+        'macro': 'ukmacro.txt'
     }
 ]
