@@ -25,7 +25,7 @@ def read_current_dict(yd):
         lold = yd.splitlines()
     else:
         all_items = Path('./')
-        list_dir = [item.name for item in all_items.iterdir() if (item.name not in ['Paste your dictionary into this folder'])
+        list_dir = [item.name for item in all_items.iterdir() if (item.name not in ['.gitkeep'])
             and item.is_file()]
         if list_dir == []:
             exit_program(
