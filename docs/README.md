@@ -54,7 +54,7 @@
 >
 > Các yêu cầu `[Y/n]`, `[y/N]` nhập hoa thường đều được, mặc định sẽ theo lựa chọn **in hoa**<br>Bất kì kí tự nào khác sẽ chọn in thường `[y]` hoặc `[n]`
 >
-> Yêu cầu `[a]dd / [r]emove / [u]pdate / [ABORT]` nhập hoa thường đều được<br>bất kì kí tự nào khác `a`, `r`, `u` _(hoặc in hoa)_ sẽ chọn `ABORT`
+> Yêu cầu `[a]dd / [r]emove / [u]pdate / [S]kip` nhập hoa thường đều được<br>bất kì kí tự nào khác `a`, `r`, `u` _(hoặc in hoa)_ sẽ chọn `[S]kip`
 
 ### 🦾 NÂNG CAO
 

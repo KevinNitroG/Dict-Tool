@@ -2,8 +2,8 @@
 # Giá trị là hoa hay thường đều được
 
 ask_convert_dict = ''                       # Y/N
-ask_latex_function = ''                     # [a]dd / [r]emove / [u]pdate / [ABORT]
-ask_confirm_character_function = ''         # [a]dd / [r]emove / [u]pdate / [ABORT]
+ask_latex_function = ''                     # [a]dd / [r]emove / [u]pdate / [S]kip
+ask_confirm_character_function = ''         # [a]dd / [r]emove / [u]pdate / [S]kip
 ask_sort_dict = ''                          # Y/N
 ask_print_final_dictionary = ''             # Y/N
 ask_create_macro = ''                       # Y/N
