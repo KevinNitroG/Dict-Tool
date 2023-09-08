@@ -26,7 +26,7 @@ def read_current_dict(yd):
     else:
         all_items = Path('./')
         list_dir = [item.name for item in all_items.iterdir() if (item.name not in ['.gitkeep'])
-            and item.is_file()]
+                    and item.is_file()]
         if list_dir == []:
             exit_program(
                 "Không tìm thấy bất kì file macro có sẵn trong thư mục hiện tại", 1)
