@@ -16,7 +16,7 @@ def main():
     try:
         from userOptions import ask_convert_dict, ask_latex_function, ask_confirm_character_function, ask_sort_dict, ask_print_final_dictionary, ask_create_macro
     except ModuleNotFoundError:
-        pass
+        ask_convert_dict, ask_latex_function, ask_confirm_character_function, ask_sort_dict, ask_print_final_dictionary, ask_create_macro = '', '', '', '', '', ''
 
     # PREPARE...
 

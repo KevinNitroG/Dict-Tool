@@ -4,8 +4,10 @@
 dictionary_list = [
     {
         'name': 'RAW',                          # name of app
-        'specific_name': 'r',                   # specific name to easier to call in script, anything you like, you can leave it to ''
-        'format': '{sort}#raw#{long}',          # the format of the key and value to replace
+        # specific name to easier to call in script, anything you like, you can leave it to ''
+        'specific_name': 'r',
+        # the format of the key and value to replace
+        'format': '{sort}#raw#{long}',
         'first_line': r'#raw#',                 # the first line in the macro file
         'macro': 'raw_macro.txt'                # macro file name
     },
@@ -43,5 +45,12 @@ dictionary_list = [
         'format': '{sort}:{long}',
         'first_line': r';DO NOT DELETE THIS LINE*** version=1 ***',
         'macro': 'ukmacro.txt'
+    },
+    {
+        'name': 'Ibus Bamboo',
+        'specific_name': 'ib',
+        'format': '{sort}:{long}',
+        'first_line': r'# DO NOT DELETE THIS LINE*** version=1 ***',
+        'macro': 'ibus-bamboo.macro.text'
     }
 ]
